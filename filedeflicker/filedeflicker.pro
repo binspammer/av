@@ -10,7 +10,7 @@ SOURCES += \
 HEADERS += \
     filedeflicker.h
 
-linux-g++-64: {
+linux-g++: {
   QMAKE_CXXFLAGS += -std=c++11
 #  QMAKE_LIBS += -lavformat -lswscale -lavcodec -lavutil
 

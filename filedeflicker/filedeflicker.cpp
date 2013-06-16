@@ -83,9 +83,6 @@ void FileDeflicker::process()
 
 void FileDeflicker::decode()
 {
-  //  if (_stream)
-  //    std::cout <<"Demuxing video from file " <<_src_filename <<" into " <<_dst_filename <<std::endl<<std::flush;
-  //  throw std::runtime_error("Demuxing video from file '" + src_filename + "' into '" + dst_filename);
   int got_frame;
   
   // read frames from the file
@@ -101,10 +98,6 @@ void FileDeflicker::decode()
   } while (got_frame);
   std::cout<<"Demuxing succeeded."<<std::endl;
   
-  if (_stream) {
-    printf("Play the output video file with the command:\nffplay -f rawvideo -pix_fmt %s -video_size %dx%d %s\n",
-           av_get_pix_fmt_name(_dec_ctx->pix_fmt), _dec_ctx->width, _dec_ctx->height, _dst_filename.c_str());
-  }
 }
 
 int FileDeflicker::decode_packet(int *got_frame, int cached)
